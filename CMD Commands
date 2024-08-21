@@ -1,0 +1,35 @@
+Run this code in CMD:-
+
+To create:-
+curl -X POST "http://localhost:8080/api/books" -H "Content-Type: application/json" -d "{\"title\":\"GitHub Repository of Gold\",\"author\":\"Abhineshwar \",\"description\":\"A github repo with methods of funtions\"}"
+
+To get a book by its ID:-
+curl -X GET "http://localhost:8080/api/books/1"
+
+to get all created books:-
+curl -X GET "http://localhost:8080/api/books"
+
+To update the book
+curl -X PUT "http://localhost:8080/api/books/1" -H "Content-Type: application/json" -d "{\"title\":\"Updated Title\",\"author\":\"Updated Author\",\"description\":\"Updated Description\"}"
+
+To delete the book:-
+curl -X DELETE "http://localhost:8080/api/books/1"
+
+This is the best way to handle JSON format 
+
+
+NEXT:-
+if there is any issue regarding the busy port you can do such things:-
+
+To make sure only one service is running on the port:
+
+Find the PID:
+netstat -ano | findstr :8080
+
+you will get the digits at the last column copy that
+and then for e.g: 54244
+
+Kill the process 
+taskkill /PID 54244 /F
+
+SUCCESS: The process with PID 54244 has been terminated.
